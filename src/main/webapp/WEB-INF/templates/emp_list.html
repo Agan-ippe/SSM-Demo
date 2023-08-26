@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>员工信息表</title>
+    <link rel="stylesheet" th:href="@{/static/css/index_work.css}">
+</head>
+<body>
+
+<div id="app">
+    <form th:action="@{/find/emp/1}" method="post">
+        <input type="text" name="name" placeholder="请输入要查询的员工姓名...">
+        <input type="submit" value="查询">
+    </form>
+    <table>
+        <tr>
+            <th>
+                <!--添加员工-->
+                <a th:href="@{/to/add}">添加员工</a>
+            </th>
+        </tr>
+
+        <tr>
+            <th colspan="6">员工列表</th>
+        </tr>
+
+        <tr>
+            <th>序号</th>
+            <th>员工姓名</th>
+            <th>性别</th>
+            <th>邮箱</th>
+            <th>所属部门</th>
+            <th>操作</th>
+        </tr>
+
+        <tr th:each="employee:${page.list}">
+            <td th:text="${employee.empId}"></td>
+            <td th:text="${employee.empName}"></td>
+            <td th:text="${employee.sex}"></td>
+            <td th:text="${employee.email}"></td>
+            <td th:text="${employee.deptName}"></td>
+            <td>
+                <a @click="deleteEmp()" th:href="@{'/delete/'+${employee.empId}}">删除</a>
+                <a th:href="@{'/emp/'+${employee.empId}}">修改</a>
+            </td>
+        </tr>
+    </table>
+    <div style="text-align: center">
+        <a th:if="${page.hasPreviousPage}" th:href="@{/emp/page/1}">首页</a>
+        <span th:each="num:${page.navigatepageNums}">
+            &nbsp;
+            <a th:href="@{'/emp/page/'+${num}}" th:text="${num}"></a>
+        </span>
+        &nbsp;
+        <a th:if="${page.hasNextPage}" th:href="@{'/emp/page/'+${page.pages}}">尾页</a>
+    </div>
+    <form id="delete" method="post">
+        <input type="hidden" name="_method" value="delete">
+    </form>
+</div>
+
+<script type="text/javascript" th:src="@{/static/js/vue.js}"></script>
+<script type="text/javascript">
+    var vue = new Vue({
+        el: "#app",
+        methods: {
+            deleteEmp() {
+                //获取form表单
+                var form = document.getElementById("delete");
+                //将超链接的href属性赋值给form表单的action属性
+                form.action = event.target.href;
+                //提交表单
+                form.submit();
+                //阻止超链接的默认跳转行为
+                event.preventDefault();
+            }
+        }
+    });
+</script>
+
+</body>
+</html>

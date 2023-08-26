@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.aip.dao.EmpMapper">
+    <insert id="addEmp">
+        insert into t_emp
+        values (#{empId}, #{empName}, #{sex}, #{email}, #{deptName})
+    </insert>
+
+    <update id="updateEmpById">
+        update t_emp
+        set emp_name  = #{empName},
+            sex       = #{sex},
+            email     = #{email},
+            dept_name = #{deptName}
+        where emp_id = #{empId};
+    </update>
+    <delete id="deleteEmpById">
+        delete
+        from t_emp
+        where emp_id = #{empId}
+    </delete>
+
+
+    <select id="queryEmpById" resultType="com.aip.pojo.Employee">
+        select *
+        from t_emp
+        where emp_id = #{empId}
+    </select>
+
+    <select id="queryAllEmp" resultType="com.aip.pojo.Employee">
+        select *
+        from t_emp
+    </select>
+    <select id="queryEmpByName" resultType="com.aip.pojo.Employee">
+        select emp_id, emp_name, sex, email, dept_name
+        from t_emp
+        <where>
+            <if test="empName != null and empName!=''">
+                emp_name = #{empName}
+            </if>
+        </where>
+    </select>
+
+</mapper>
