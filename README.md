@@ -32,7 +32,8 @@
 
 ## 数据库结构
 
-![数据库结构图](C:\Users\93988\Desktop\studynotes\SSM\ssmdemo\imgs\数据库结构图.png)
+![数据库结构图](https://github.com/Agan-ippe/SSM-Demo/assets/117190706/0d0903b5-11ad-474f-a72d-bbdbe506ea08)
+
 
 
 
@@ -50,32 +51,38 @@
 
 > 分页显示员工列表
 
-![分页](C:\Users\93988\Desktop\studynotes\SSM\ssmdemo\imgs\分页.gif)
+![分页](https://github.com/Agan-ippe/SSM-Demo/assets/117190706/83c48a45-f3f0-483a-8482-c65ae93d46c3)
 
 
 
 > 新增功能
 
-![新增](C:\Users\93988\Desktop\studynotes\SSM\ssmdemo\imgs\添加.gif)
+![添加](https://github.com/Agan-ippe/SSM-Demo/assets/117190706/2188150a-b8c3-4acf-ae1f-9b0797e3c55c)
+
 
 
 
 >查询功能
 
-![查询](C:\Users\93988\Desktop\studynotes\SSM\ssmdemo\imgs\查询.gif)
+![查询](https://github.com/Agan-ippe/SSM-Demo/assets/117190706/97bc1aa7-d6df-4dca-a4ad-23e2d7e204a6)
+
 
 
 
 > 删除
 
-![删除](C:\Users\93988\Desktop\studynotes\SSM\ssmdemo\imgs\删除.gif)
+![删除](https://github.com/Agan-ippe/SSM-Demo/assets/117190706/81b69fe7-a8be-4d02-aa34-5236e1561337)
+
 
 
 
 > 修改
 
-![修改](C:\Users\93988\Desktop\studynotes\SSM\ssmdemo\imgs\修改.gif)
+![修改](https://github.com/Agan-ippe/SSM-Demo/assets/117190706/4c09aab8-d293-4365-a7c3-9b7b1a6cdaf4)
+
 
 
 
 ## 本项目仅限于学习交流
+
+## 效果图无法查看，可在imgs文件夹中查找
